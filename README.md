@@ -2,35 +2,35 @@
 
 ## conv/header
 
-¶HTTP Header‚ğJSONŒ`®‚È‚Ç‚É•ÏŠ·‚µ‚Ü‚·B
+ç”ŸHTTP Headerã‚’JSONå½¢å¼ãªã©ã«å¤‰æ›ã—ã¾ã™ã€‚
 
-jq‚Ì‚æ‚¤‚ÈƒRƒ}ƒ“ƒh‚Æ‘g‚İ‡‚í‚¹‚ê‚ÎAƒVƒFƒ‹‚Å—˜—p‰Â”\‚É‚È‚è‚Ü‚·B
+jqã®ã‚ˆã†ãªã‚³ãƒãƒ³ãƒ‰ã¨çµ„ã¿åˆã‚ã›ã‚Œã°ã€ã‚·ã‚§ãƒ«ã§åˆ©ç”¨å¯èƒ½ã«ãªã‚Šã¾ã™ã€‚
 
-### g—p•û–@
+### ä½¿ç”¨æ–¹æ³•
 
-#### ƒvƒƒOƒ‰ƒ€ŒÄ‚Ño‚µ—á
+#### ãƒ—ãƒ­ã‚°ãƒ©ãƒ å‘¼ã³å‡ºã—ä¾‹
 
-ƒvƒƒOƒ‰ƒ€‚Å—˜—p‚·‚éê‡‚Íconv/header.go‚ğg—p‚µ‚Ü‚·B
+ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã§åˆ©ç”¨ã™ã‚‹å ´åˆã¯conv/header.goã‚’ä½¿ç”¨ã—ã¾ã™ã€‚
 
 ```golang
 import (
 	"github.com/ngv-jp/libgo-http/conv"
 )
-i’†—ªj
+ï¼ˆä¸­ç•¥ï¼‰
 	c := conv.NewHttpHeaderConverter()
 	r, e := c.Output()
 ```
 
-#### ƒRƒ}ƒ“ƒhÀs—á
+#### ã‚³ãƒãƒ³ãƒ‰å®Ÿè¡Œä¾‹
 
-ƒRƒ}ƒ“ƒh‚ÅÀs‚·‚éê‡‚Íconv/main/header.go‚ğg—p‚µ‚Ü‚·B
-ƒpƒCƒv‚ÅŒq‚°‚ê‚ÎA•W€o—Í‚ğ“ü—Íƒf[ƒ^‚É‚·‚é‚±‚Æ‚ª‰Â”\‚Å‚·B
+ã‚³ãƒãƒ³ãƒ‰ã§å®Ÿè¡Œã™ã‚‹å ´åˆã¯conv/main/header.goã‚’ä½¿ç”¨ã—ã¾ã™ã€‚
+ãƒ‘ã‚¤ãƒ—ã§ç¹‹ã’ã‚Œã°ã€æ¨™æº–å‡ºåŠ›ã‚’å…¥åŠ›ãƒ‡ãƒ¼ã‚¿ã«ã™ã‚‹ã“ã¨ãŒå¯èƒ½ã§ã™ã€‚
 
 ```bash
 curl -I https://example.com | go run conv/main/header.go
 ```
 
-ƒfƒtƒHƒ‹ƒg‚Å‚ÍJSONŒ`®‚Åo—Í‚³‚ê‚Ü‚·B
+ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯JSONå½¢å¼ã§å‡ºåŠ›ã•ã‚Œã¾ã™ã€‚
 
 ```json
 {"acceptRanges":"bytes","age":"197337","cacheControl":"max-age=604800","code":"200","contentEncoding":"gzip","contentLength":"648","contentType":"text/html; charset=UTF-8","date":"Thu, 07 Jul 2022 14:50:20 GMT","etag":"\"3147526947\"","expires":"Thu, 14 Jul 2022 14:50:20 GMT","lastModified":"Thu, 17 Oct 2019 07:18:26 GMT","server":"ECS (sec/973B)","xCache":"HIT"}
