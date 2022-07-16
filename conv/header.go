@@ -113,14 +113,14 @@ func (conv *HttpHeaderConverter) parsePair(line string, stream chan<- []string) 
 	return nil
 }
 
-var statusPattern *regexp.Regexp = regexp.MustCompile(`(?P<code>[0-9]{3})\s(?P<message>.+)$`)
+var statusPattern *regexp.Regexp = regexp.MustCompile(`(?P<code>[0-9]{3})`)
 var statusCodeIndex = statusPattern.SubexpIndex("code")
 var statusMessageIndex = statusPattern.SubexpIndex("message")
 
 func (conv *HttpHeaderConverter) parseStatus(line string, stream chan<- []string) error {
 	g := statusPattern.FindStringSubmatch(line)
 	log.Println(g)
-	if len(g) != 3 {
+	if len(g) != 2 {
 		return errors.New("cannot parse")
 	}
 	var k string
