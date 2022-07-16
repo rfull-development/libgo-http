@@ -119,7 +119,6 @@ var statusMessageIndex = statusPattern.SubexpIndex("message")
 
 func (conv *HttpHeaderConverter) parseStatus(line string, stream chan<- []string) error {
 	g := statusPattern.FindStringSubmatch(line)
-	log.Println(g)
 	if len(g) != 2 {
 		return errors.New("cannot parse")
 	}
